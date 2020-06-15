@@ -6,6 +6,7 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <title>Title</title>
 </head>
 <body>
@@ -14,7 +15,7 @@
 </nav>
 <div class="container" style="max-width: 600px">
     <div class="card">
-        <h5 class="card-header">해야할 일</h5>
+        <h5 class="card-header"><i class="fas fa-bars fa-fw"></i> 해야할 일</h5>
         <div class="card-body">
             <ul class="list-group mb-3">
                 <li class="list-group-item" th:each="todo: ${list[0]}">
@@ -22,15 +23,15 @@
                         <a th:href="@{'/content/' + ${todo.bno}}" th:text="${todo.title}"></a>
                         <a th:href="@{'/delete/' + ${todo.bno}}" class="close"><span aria-hidden="true">×</span></a>
                     </p>
-                    <p th:text="'작성자 : ' + ${todo.writer} + ' / 작성일 : ' + ${todo.regDate}" style="margin-bottom: 0;"></p>
+                    <p th:text="'작성자 : ' + ${todo.writer} + ' / 작성일 : ' + ${#dates.format(todo.updateDate, 'yyyy-MM-dd HH:mm:ss')}" style="margin-bottom: 0;"></p>
                 </li>
             </ul>
-            <p><a class="btn btn-secondary" href="/form" role="button">작성</a></p>
+            <p><a class="btn btn-secondary" href="/form" role="button">할 일 작성</a></p>
         </div>
     </div>
     <hr>
     <div class="card">
-        <h5 class="card-header">완료한 일</h5>
+        <h5 class="card-header"><i class="fas fa-check fa-fw"></i> 완료한 일</h5>
         <div class="card-body">
             <ul class="list-group mb-3">
                 <li class="list-group-item" th:each="complete: ${list[1]}">
@@ -38,11 +39,13 @@
                         <a th:href="@{'/content/' + ${complete.bno}}" th:text="${complete.title}"></a>
                         <a th:href="@{'/delete/' + ${complete.bno}}" class="close"><span aria-hidden="true">×</span></a>
                     </p>
-                    <p th:text="'작성자 : ' + ${complete.writer} + ' / 작성일 : ' + ${complete.regDate}" style="margin-bottom: 0;"></p>
+                    <p th:text="'작성자 : ' + ${complete.writer} + ' / 작성일 : ' + ${#dates.format(complete.updateDate, 'yyyy-MM-dd HH:mm:ss')}" style="margin-bottom: 0;"></p>
                 </li>
             </ul>
         </div>
     </div>
+    <hr>
+    <p class="text-center"><i>Roh Jaehee</i></p>
 </div>
 </body>
 </html>

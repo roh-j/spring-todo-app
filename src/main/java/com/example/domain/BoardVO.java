@@ -2,7 +2,7 @@ package com.example.domain;
 
 import lombok.Data;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 
 @Data
 public class BoardVO {
@@ -10,7 +10,7 @@ public class BoardVO {
     private String title;
     private String content;
     private String writer;
-    private Date regDate;
-    private Date updateDate;
+    private Timestamp regDate;
+    private Timestamp updateDate;
     private Boolean isComplete;
 }
