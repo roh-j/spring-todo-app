@@ -14,6 +14,13 @@
     <a class="navbar-brand font-weight-bold" href="/">Spring Demo</a>
 </nav>
 <div class="container" style="max-width: 600px">
+    <div class="progress mb-3">
+        <div class="progress-bar progress-bar-striped progress-bar-animated bg-info"
+             th:with="progress=${(list['complete'].size() * 1.0 / (list['todo'].size() * 1.0 + list['complete'].size() * 1.0)) * 100}"
+             th:style="'width: ' + ${progress} + '%'"
+             th:text="${#numbers.formatInteger(progress, 2, 'COMMA')} + ' %'"></div>
+    </div>
+    <hr>
     <div class="card">
         <h5 class="card-header"><i class="fas fa-bars fa-fw"></i> 해야할 일</h5>
         <div class="card-body">
@@ -45,7 +52,7 @@
         </div>
     </div>
     <hr>
-    <p class="text-center"><i>Roh Jaehee</i></p>
+		<p class="text-center"><i>Roh Jaehee</i></p>
 </div>
 </body>
 </html>
