@@ -1,0 +1,8 @@
+/root/IdeaProjects/demo/src/main/java/com/example/controller/ReactController.java
+/root/IdeaProjects/demo/src/main/java/com/example/demo/DemoApplication.java
+/root/IdeaProjects/demo/src/main/java/com/example/service/BoardService.java
+/root/IdeaProjects/demo/src/main/java/com/example/persistance/BoardMapper.java
+/root/IdeaProjects/demo/src/main/java/com/example/config/JwtAuthenticationEntryPoint.java
+/root/IdeaProjects/demo/src/main/java/com/example/service/BoardServiceImpl.java
+/root/IdeaProjects/demo/src/main/java/com/example/controller/HomeController.java
+/root/IdeaProjects/demo/src/main/java/com/example/domain/BoardVO.java

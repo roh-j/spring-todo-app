@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: com.example.demo.ConnectionTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.122 s <<< FAILURE! - in com.example.demo.ConnectionTest
+ConnectionTest  Time elapsed: 0.119 s  <<< ERROR!
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.example.demo.ConnectionTest.ConnectionTest(ConnectionTest.java:17)
+
