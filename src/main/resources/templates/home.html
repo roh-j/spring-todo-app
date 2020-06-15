@@ -18,7 +18,7 @@
         <h5 class="card-header"><i class="fas fa-bars fa-fw"></i> 해야할 일</h5>
         <div class="card-body">
             <ul class="list-group mb-3">
-                <li class="list-group-item" th:each="todo: ${list[0]}">
+                <li class="list-group-item" th:each="todo: ${list['todo']}">
                     <p>
                         <a th:href="@{'/content/' + ${todo.bno}}" th:text="${todo.title}"></a>
                         <a th:href="@{'/delete/' + ${todo.bno}}" class="close"><span aria-hidden="true">×</span></a>
@@ -34,7 +34,7 @@
         <h5 class="card-header"><i class="fas fa-check fa-fw"></i> 완료한 일</h5>
         <div class="card-body">
             <ul class="list-group mb-3">
-                <li class="list-group-item" th:each="complete: ${list[1]}">
+                <li class="list-group-item" th:each="complete: ${list['complete']}">
                     <p>
                         <a th:href="@{'/content/' + ${complete.bno}}" th:text="${complete.title}"></a>
                         <a th:href="@{'/delete/' + ${complete.bno}}" class="close"><span aria-hidden="true">×</span></a>
