@@ -14,15 +14,18 @@ public interface BoardMapper {
     @Select("select * from board where isComplete = TRUE order by bno desc")
     public List<BoardVO> complete();
 
-    @Insert("insert into board (title, content, writer) values (#{title}, #{content}, #{writer})")
-    public void insert(BoardVO board);
+    @Insert("insert into board (title, content, writer, regDate, updateDate) values (#{title}, #{content}, #{writer}, #{regDate}, #{updateDate})")
+    public boolean insert(BoardVO board);
 
     @Delete("delete from board where bno = #{bno}")
-    public void delete(BoardVO board);
+    public boolean delete(BoardVO board);
 
     @Select("select * from board where bno = #{bno}")
     public List<BoardVO> content(BoardVO board);
 
-    @Update("update board set isComplete = TRUE where bno = #{bno}")
-    public void update(BoardVO board);
+    @Update("update board set isComplete = TRUE, updateDate = #{updateDate} where bno = #{bno}")
+    public boolean update(BoardVO board);
+
+    @Update("update board set isComplete = False, updateDate = #{updateDate} where bno = #{bno}")
+    public boolean undo(BoardVO board);
 }
