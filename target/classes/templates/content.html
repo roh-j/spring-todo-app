@@ -23,7 +23,7 @@
                     <hr>
                     <p th:utext="${#strings.unescapeJava(#strings.replace(#strings.escapeJava(content[0].content),'\n','&lt;br /&gt;'))}" class="mb-3"></p>
                     <hr>
-                    <p>
+                    <p style="margin-bottom: 0;">
                         등록일 : [[${#dates.format(content[0].regDate, 'yyyy-MM-dd HH:mm:ss')}]]<br>
                         수정일 : [[${#dates.format(content[0].updateDate, 'yyyy-MM-dd HH:mm:ss')}]]
                     </p>

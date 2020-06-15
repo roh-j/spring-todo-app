@@ -6,9 +6,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @Service
 @AllArgsConstructor
@@ -23,12 +21,13 @@ public class BoardServiceImpl implements BoardService {
     }
 
     @Override
-    public List<List<BoardVO>> home() {
+    public Map<String, List<BoardVO>> home() {
+        Map<String, List<BoardVO>> map = new HashMap<>();
         List<List<BoardVO>> list = new ArrayList<>();
-        list.add(boardMapper.toDo());
-        list.add(boardMapper.complete());
+        map.put("todo", boardMapper.toDo());
+        map.put("complete", boardMapper.complete());
 
-        return list;
+        return map;
     }
 
     @Override
