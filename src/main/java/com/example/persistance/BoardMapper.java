@@ -8,10 +8,10 @@ import java.util.List;
 @Mapper
 public interface BoardMapper {
 
-    @Select("select * from board where isComplete = FALSE order by bno desc")
-    public List<BoardVO> toDo();
+    @Select("select * from board where isComplete = FALSE order by updateDate desc")
+    public List<BoardVO> todo();
 
-    @Select("select * from board where isComplete = TRUE order by bno desc")
+    @Select("select * from board where isComplete = TRUE order by updateDate desc")
     public List<BoardVO> complete();
 
     @Insert("insert into board (title, content, writer, regDate, updateDate) values (#{title}, #{content}, #{writer}, #{regDate}, #{updateDate})")

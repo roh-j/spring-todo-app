@@ -24,7 +24,7 @@ public class BoardServiceImpl implements BoardService {
     public Map<String, List<BoardVO>> home() {
         Map<String, List<BoardVO>> map = new HashMap<>();
         List<List<BoardVO>> list = new ArrayList<>();
-        map.put("todo", boardMapper.toDo());
+        map.put("todo", boardMapper.todo());
         map.put("complete", boardMapper.complete());
 
         return map;
