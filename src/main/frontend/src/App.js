@@ -1,8 +1,9 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './App.css';
 import ToDo from './components/ToDo';
 import Complete from './components/Complete';
 import Header from "./components/Header";
+import Write from "./components/Write";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Container} from "react-bootstrap";
 import {Table} from "react-bootstrap";
@@ -86,6 +87,9 @@ class App extends React.Component {
                             }
                             </tbody>
                         </Table>
+                        <h5>내용 작성</h5>
+                        <hr/>
+                        <Write/>
                     </Container>
                 </>
             );
